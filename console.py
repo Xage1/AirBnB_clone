@@ -12,6 +12,8 @@ from models.place import Place
 from models.amenity import Amenity
 from models.review import Review
 
+storage = FileStorage()
+storage.reload()
 
 def parse(arg):
     curly_braces = re.search(r"\{(.*?)\}", arg)
