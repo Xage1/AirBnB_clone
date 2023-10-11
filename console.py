@@ -1,5 +1,5 @@
 #!/usr/bin/python3
-"""Defines the HBnB console."""
+"""Defines the HBnB console, a command-line interface for managing data models."""
 import cmd
 import re
 from shlex import split
