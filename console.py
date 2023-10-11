@@ -3,9 +3,7 @@
 import cmd
 import re
 from shlex import split
-import sys
-import os
-from models import storage
+from models.engine.file_storage import FileStorage
 from models.base_model import BaseModel
 from models.user import User
 from models.state import State
@@ -14,8 +12,8 @@ from models.place import Place
 from models.amenity import Amenity
 from models.review import Review
 
-parent_dir = os.path.dirname(os.path.abspath(__file__))
-sys.path.append(parent_dir)
+storage = FileStorage()
+storage.reload()
 
 def parse(arg):
     curly_braces = re.search(r"\{(.*?)\}", arg)
