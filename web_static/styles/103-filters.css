@@ -1,0 +1,105 @@
+.filters {
+    background-color: white;
+    height: 70px;
+    width: 100%;
+    border: 1px solid #DDDDDD;
+    border-radius: 4px;
+    display: flex;
+    /* flex-direction: row; */
+    align-items: center;
+    position: relative;
+    z-index: 1;
+  }
+
+.locations {
+  border-right:1px solid #DDDDDD;
+}
+
+.locations,
+.amenities {
+  height: 100%;
+  width: 25%;
+  display: inline-block;
+  vertical-align: top;
+  position: relative;
+}
+
+.locations h3,
+.amenities h3 {
+  font-weight: 600;
+  padding-left:30px;
+  margin:10px auto;
+}
+
+.locations h4,
+.amenities h4 {
+  font-weight: 400;
+  font-size: 14px;
+  padding-left:30px;
+  margin:0;
+}
+  
+.search-button {
+    font-size: 18px;
+    background-color: #FF5A5F;
+    color: #FFFFFF;
+    height: 48px;
+    width: 20%;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    position: absolute;
+    right: 30px;
+    margin-top: auto;
+    margin-bottom: auto;
+  }
+  
+.search-button:hover {
+    opacity: 0.9;
+  }
+
+.locations:hover .popover,
+.amenities:hover .popover {
+    display: block;
+    position: relative;
+    z-index: 2;
+    padding: 30px;
+    gap: 5px;
+  }
+
+.popover {
+    display: none;
+    left: 0;
+    background-color: #FAFAFA;
+    border: 1px solid #DDDDDD;
+    border-radius: 4px;
+    list-style: none;
+    padding: 30px;
+  }
+
+.locations h2 {
+    font-size: 16px;
+}
+
+ul {
+  list-style: none;
+}
+
+/* Make the search button full width on smaller screens */
+@media screen and (max-width: 768px) {
+    .search-button {
+      width: 100%;
+      right: 0;
+      margin-top: 110px;
+      /* margin-bottom: 50px; */
+    }
+
+    .filters {
+        height: 90px;
+    }
+
+    .locations,
+    .amenities {
+        width: 100%;
+    }
+  }
