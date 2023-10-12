@@ -45,14 +45,12 @@ class FileStorage:
     def reload(self):
         """Loads storage dictionary from file"""
         try:
-            with open(self.__file_path, 'r') as f:
-                serialized = json.load(f)
-            for key, value in serialized.items():
-                cls_name = value['__class__']
-                obj = classes[cls_name](**value)
-                FileStorage.__objects[key] = obj
-        except Exception as e:
-            print(f"An error occured during reload: {e}")
+            with open(self.__file_path, 'r') as fo:
+                tmp = json.load(fo)
+            for key in tmp.items():
+                self.__objets[key] = classes[tmp[key]['__class__']](**tmp[key])
+        except:
+            pass
 
     def delete(self, obj=None):
         """ Delete obj from __objects if it’s inside
